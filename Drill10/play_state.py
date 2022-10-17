@@ -67,13 +67,13 @@ team = []
 def enter():
     global boy, grass, running
     global team
-    team = [Boy() for i in range(boy_num)] #객체 생성
+    team.append(Boy()) #객체 생성
     grass = Grass()
     running = True
 
 #종료
 def exit():
-    global boy, grass
+    global boy, grass, team
     del boy
     del grass
 
