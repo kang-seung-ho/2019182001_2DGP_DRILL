@@ -2,6 +2,7 @@ from pico2d import *
 import game_world
 from ball import Ball
 import game_framework
+import random
 
 #1 : 이벤트 정의
 RD, LD, RU, LU, TIMER, SPACE = range(6)
@@ -44,10 +45,10 @@ class IDLE:
 
     @staticmethod
     def do(self):
-        self.frame = (self.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 5
+        self.frame = (self.frame + random.randint(0,5) + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 5
         self.x += self.dir * RUN_SPEED_PPS * game_framework.frame_time
 
-        if self.x >= 790:
+        if self.x >= 1590:
             self.dir = -1
         elif self.x <= 20:
             self.dir = 1
@@ -129,7 +130,7 @@ next_state = {
 class Boy:
 
     def __init__(self):
-        self.x, self.y = 100, 200
+        self.x, self.y = random.randint(10, 700), 200
         self.frame = 0
         self.dir, self.face_dir = 0, 1
         self.image = load_image('bird_animation.png')

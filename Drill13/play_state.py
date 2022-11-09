@@ -24,9 +24,29 @@ def handle_events():
 def enter():
     global boy, grass
     boy = Boy()
+    boy2 = Boy()
+    boy3 = Boy()
+    boy4 = Boy()
+    boy5 = Boy()
+    boy6 = Boy()
+    boy7 = Boy()
+    boy8 = Boy()
+    boy9 = Boy()
+    boy10 = Boy()
+
     grass = Grass()
     game_world.add_object(grass, 0)
+
     game_world.add_object(boy, 1)
+    game_world.add_object(boy2, 1)
+    game_world.add_object(boy3, 1)
+    game_world.add_object(boy4, 1)
+    game_world.add_object(boy5, 1)
+    game_world.add_object(boy6, 1)
+    game_world.add_object(boy7, 1)
+    game_world.add_object(boy8, 1)
+    game_world.add_object(boy9, 1)
+    game_world.add_object(boy10, 1)
 
 
 # 종료
@@ -59,7 +79,7 @@ def resume():
 def test_self():
     import play_state
 
-    pico2d.open_canvas()
+    pico2d.open_canvas(1600, 600)
     game_framework.run(play_state)
     pico2d.clear_canvas()
 
